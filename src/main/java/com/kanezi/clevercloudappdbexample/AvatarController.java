@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/avatar")
 @Value
@@ -16,8 +18,8 @@ public class AvatarController {
     AvatarRepository avatarRepository;
 
     @GetMapping
-    String showAvatars() {
-        return "avatars";
+    List<Avatar> showAvatars() {
+        return avatarRepository.findAll();
     }
 
 
