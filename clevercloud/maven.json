@@ -1,7 +1,7 @@
 {
   "build": {
     "type": "maven",
-    "goal": "-Pprod package -DskipTests"
+    "goal": "package -DskipTests"
   },
   "deploy": {
     "jarName": "./target/clever-cloud-app-db-example##*.jar"
