@@ -49,6 +49,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>clever-cloud-app-db-example##${project.version}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
