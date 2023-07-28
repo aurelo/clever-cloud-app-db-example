@@ -14,6 +14,8 @@ public class AppProperties {
 
     String name;
     String description;
+    String env;
+    String shell;
 
     @PostConstruct
     void printAppConfig() {

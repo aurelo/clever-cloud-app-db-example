@@ -1,0 +1,2 @@
+#!/bin/bash
+set APP_SHELL=$POSTGRESQL_ADDON_USER
