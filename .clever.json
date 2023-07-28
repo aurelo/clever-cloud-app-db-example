@@ -1,9 +1,9 @@
 {
   "apps": [
     {
-      "app_id": "app_765ab8f3-f018-4bbf-b4c9-268faf54a9ec",
+      "app_id": "app_36773160-8f77-4959-9a89-fe6c2c68db17",
       "org_id": "user_e094ce84-7df4-464c-9a55-b78c8f4bd805",
-      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_765ab8f3-f018-4bbf-b4c9-268faf54a9ec.git",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_36773160-8f77-4959-9a89-fe6c2c68db17.git",
       "name": "app_db",
       "alias": "app_db"
     }
