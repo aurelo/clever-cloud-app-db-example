@@ -1,0 +1,30 @@
+name: Creates clever cloud app with database
+
+on: 
+  workflow_dispatch:
+    inputs:
+      app_name:
+        description: Application name
+        required: true
+      db_name:
+        description: Database name
+        required: true
+        
+jobs:
+
+  create_app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download cli
+        run: |
+          git fetch --prune --unshallow
+          wget https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz
+          tar xvzf clever-tools-latest_linux.tar.gz
+          ./clever-tools-latest_linux/clever login --token $CLEVER_TOKEN --secret $CLEVER_SECRET
+          ./clever-tools-latest_linux/clever create --type docker ${{event.inputs.app_name}}
+          ./clever-tools-latest_linux/clever addon create postgresql-addon ${{event.inputs.db_name}} --link ${{event.inputs.app_name}}
+          ./clever-tools-latest_linux/clever env set SPRING_PROFILES_ACTIVE "clever_cloud"
+          
+          
+    
