@@ -22,7 +22,10 @@ jobs:
       - run: tar xvzf clever-tools-latest_linux.tar.gz
       - run: ./clever-tools-latest_linux/clever login --token $CLEVER_TOKEN --secret $CLEVER_SECRET
       - run: ./clever-tools-latest_linux/clever create --help
-      - run: ./clever-tools-latest_linux/clever create --type docker ${{github.event.inputs.app_name}}
+      - name: create app
+        run: |
+          ./clever-tools-latest_linux/clever login --token $CLEVER_TOKEN --secret $CLEVER_SECRET
+          ./clever-tools-latest_linux/clever create --type docker ${{github.event.inputs.app_name}}
       - run: ./clever-tools-latest_linux/clever addon create postgresql-addon ${{github.event.inputs.db_name}} --link ${{github.event.inputs.app_name}}
       - run: ./clever-tools-latest_linux/clever env set SPRING_PROFILES_ACTIVE "clever_cloud"
           
