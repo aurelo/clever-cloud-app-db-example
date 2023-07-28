@@ -19,7 +19,7 @@ jobs:
       - name: Download cli
         run: |
           git fetch --prune --unshallow
-          wget https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz
+          curl -O https://clever-tools.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz
           tar xvzf clever-tools-latest_linux.tar.gz
           ./clever-tools-latest_linux/clever login --token $CLEVER_TOKEN --secret $CLEVER_SECRET
           ./clever-tools-latest_linux/clever create --type docker ${{github.event.inputs.app_name}}
