@@ -1,9 +1,10 @@
 {
   "build": {
     "type": "maven",
-    "goal": "package -Dspring.profiles.active=clever_cloud -DskipTests"
+    "goal": "package -DskipTests"
   },
   "deploy": {
+    "goal": "-Dspring.profiles.active=clever_cloud",
     "jarName": "./target/clever-cloud-app-db-example##*.jar"
   }
 }
